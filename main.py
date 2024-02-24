@@ -9,6 +9,10 @@ passwd = os.environ.get('PASSWD')
 SCKEY = os.environ.get('SCKEY')
 # PUSHPLUS
 Token = os.environ.get('TOKEN')
+print(email)
+print(passwd)
+print(SCKEY)
+print(Token)
 def push(content):
     if SCKEY != '1':
         url = "https://sctapi.ftqq.com/{}.send?title={}&desp={}".format(SCKEY, 'ikuuu签到', content)
@@ -36,6 +40,7 @@ data = {
         'email': email,
         'passwd': passwd
 }
+
 try:
     print('进行登录...')
     response = json.loads(session.post(url=login_url,headers=header,data=data).text)
